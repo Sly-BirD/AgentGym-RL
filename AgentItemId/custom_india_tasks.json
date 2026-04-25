@@ -1,0 +1,140 @@
+[
+    {
+        "item_id": "india_redbus_001",
+        "task_type": "web_navigation",
+        "source": "custom_india",
+        "description": "Book a bus ticket from Pune to Mumbai on RedBus for tomorrow, selecting the cheapest AC sleeper bus available.",
+        "intent": "Navigate to RedBus, search for Pune to Mumbai buses, filter by AC Sleeper, sort by price (low to high), and select the cheapest option. Proceed to the passenger details page.",
+        "start_url": "https://www.redbus.in/",
+        "evaluation_criteria": {
+            "success_conditions": [
+                "Reached bus listing page with correct route (Pune → Mumbai)",
+                "Applied AC Sleeper filter",
+                "Selected a bus",
+                "Reached passenger details / seat selection page"
+            ],
+            "partial_progress_milestones": [
+                {"milestone": "entered_source_city", "description": "Typed 'Pune' in the source city field", "reward": 0.05},
+                {"milestone": "entered_destination_city", "description": "Typed 'Mumbai' in the destination city field", "reward": 0.05},
+                {"milestone": "selected_date", "description": "Selected tomorrow's date in the date picker", "reward": 0.05},
+                {"milestone": "clicked_search", "description": "Clicked the 'Search Buses' button", "reward": 0.10},
+                {"milestone": "reached_results", "description": "Bus listing page loaded with results", "reward": 0.10},
+                {"milestone": "applied_filter", "description": "Applied AC Sleeper filter", "reward": 0.10},
+                {"milestone": "sorted_by_price", "description": "Sorted results by price (low to high)", "reward": 0.05},
+                {"milestone": "selected_bus", "description": "Clicked 'View Seats' on a bus", "reward": 0.15},
+                {"milestone": "selected_seat", "description": "Selected a seat on the seat layout", "reward": 0.10},
+                {"milestone": "reached_checkout", "description": "Reached passenger details page", "reward": 0.25}
+            ],
+            "max_reward": 1.0
+        },
+        "tags": ["india", "travel", "booking", "bus"]
+    },
+    {
+        "item_id": "india_redbus_002",
+        "task_type": "web_navigation",
+        "source": "custom_india",
+        "description": "Search for overnight Volvo buses from Bangalore to Hyderabad on RedBus. Find one with a rating above 4 stars and check its amenities.",
+        "intent": "Navigate to RedBus, search Bangalore to Hyderabad, filter by Volvo bus type, find a bus rated above 4 stars, and view its amenities/details.",
+        "start_url": "https://www.redbus.in/",
+        "evaluation_criteria": {
+            "success_conditions": [
+                "Correct route searched (Bangalore → Hyderabad)",
+                "Filtered/found Volvo buses",
+                "Identified a bus with 4+ star rating",
+                "Viewed amenities/details page"
+            ],
+            "partial_progress_milestones": [
+                {"milestone": "entered_source_city", "reward": 0.05},
+                {"milestone": "entered_destination_city", "reward": 0.05},
+                {"milestone": "clicked_search", "reward": 0.10},
+                {"milestone": "reached_results", "reward": 0.10},
+                {"milestone": "applied_volvo_filter", "reward": 0.15},
+                {"milestone": "found_high_rated_bus", "reward": 0.20},
+                {"milestone": "viewed_amenities", "reward": 0.35}
+            ],
+            "max_reward": 1.0
+        },
+        "tags": ["india", "travel", "booking", "bus", "research"]
+    },
+    {
+        "item_id": "india_confirmtkt_001",
+        "task_type": "web_navigation",
+        "source": "custom_india",
+        "description": "Check train ticket availability on ConfirmTkt for Pune to Delhi Rajdhani Express for next Friday. Find the cheapest available class.",
+        "intent": "Navigate to ConfirmTkt, enter route Pune to Delhi, search for Rajdhani Express, check availability for next Friday across all classes (1AC, 2AC, 3AC), and identify the cheapest available class.",
+        "start_url": "https://www.confirmtkt.com/",
+        "evaluation_criteria": {
+            "success_conditions": [
+                "Correct route searched (Pune → Delhi)",
+                "Found Rajdhani Express in results",
+                "Checked availability for correct date",
+                "Identified cheapest available class"
+            ],
+            "partial_progress_milestones": [
+                {"milestone": "entered_source_station", "reward": 0.05},
+                {"milestone": "entered_destination_station", "reward": 0.05},
+                {"milestone": "selected_date", "reward": 0.05},
+                {"milestone": "clicked_search", "reward": 0.10},
+                {"milestone": "found_rajdhani", "reward": 0.15},
+                {"milestone": "checked_availability", "reward": 0.20},
+                {"milestone": "compared_classes", "reward": 0.15},
+                {"milestone": "identified_cheapest", "reward": 0.25}
+            ],
+            "max_reward": 1.0
+        },
+        "tags": ["india", "travel", "train", "availability_check"]
+    },
+    {
+        "item_id": "india_confirmtkt_002",
+        "task_type": "web_navigation",
+        "source": "custom_india",
+        "description": "Use ConfirmTkt to check the PNR status of a ticket with PNR number 1234567890 and determine the current booking status and confirmation probability.",
+        "intent": "Navigate to ConfirmTkt PNR status page, enter the PNR number, submit, and read the current status (confirmed/waitlisted/RAC) along with the prediction probability.",
+        "start_url": "https://www.confirmtkt.com/pnr-status",
+        "evaluation_criteria": {
+            "success_conditions": [
+                "Reached PNR status page",
+                "Entered PNR number correctly",
+                "Submitted and got results",
+                "Read and reported status + prediction"
+            ],
+            "partial_progress_milestones": [
+                {"milestone": "navigated_to_pnr_page", "reward": 0.10},
+                {"milestone": "entered_pnr_number", "reward": 0.15},
+                {"milestone": "clicked_check_status", "reward": 0.20},
+                {"milestone": "read_booking_status", "reward": 0.25},
+                {"milestone": "read_prediction", "reward": 0.30}
+            ],
+            "max_reward": 1.0
+        },
+        "tags": ["india", "travel", "train", "pnr_status"]
+    },
+    {
+        "item_id": "india_redbus_003",
+        "task_type": "web_navigation",
+        "source": "custom_india",
+        "description": "On RedBus, search for buses from Chennai to Pondicherry for this Saturday. Find the bus with the most reviews and book a window seat.",
+        "intent": "Navigate to RedBus, search Chennai to Pondicherry for Saturday, sort/browse results to find most-reviewed bus, select it, and choose a window seat.",
+        "start_url": "https://www.redbus.in/",
+        "evaluation_criteria": {
+            "success_conditions": [
+                "Correct route and date searched",
+                "Found most-reviewed bus",
+                "Selected a window seat",
+                "Proceeded toward booking"
+            ],
+            "partial_progress_milestones": [
+                {"milestone": "entered_route", "reward": 0.10},
+                {"milestone": "selected_date", "reward": 0.05},
+                {"milestone": "clicked_search", "reward": 0.10},
+                {"milestone": "browsed_results", "reward": 0.10},
+                {"milestone": "found_most_reviewed", "reward": 0.20},
+                {"milestone": "clicked_view_seats", "reward": 0.10},
+                {"milestone": "selected_window_seat", "reward": 0.20},
+                {"milestone": "proceeded_to_booking", "reward": 0.15}
+            ],
+            "max_reward": 1.0
+        },
+        "tags": ["india", "travel", "booking", "bus", "seat_selection"]
+    }
+]

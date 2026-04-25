@@ -143,6 +143,17 @@ pip3 install -e .
 pip3 install transformers==4.51.3
 ```
 
+### Dashboard Prototyping (Local Development)
+
+We provide an interactive Gradio dashboard to monitor training, replay agent trajectories, and compare RL vs Baseline models. The dashboard is designed to be run locally.
+
+```sh
+# Start the Gradio Dashboard
+python dashboard/app.py
+```
+
+> **Note:** The current dashboard runs with generated mock data for local UI development. Once cloud training is complete, the dashboard can be pointed to real `rollout_log_dir` trajectories and Weights & Biases metrics.
+
 ### Training
 
 For SFT, DPO and AgentEvol, please refer to the `README.md` of [AgentGym](https://github.com/WooooDyy/AgentGym/tree/640f8bca6901a6a6d540ff61522b813988da47c4/).
@@ -231,7 +242,8 @@ Most explanations of the arguments can be found in the docs of [verl](https://ve
 
 ### Visualized user interface
 
-Check [here](https://github.com/WooooDyy/AgentGym/tree/640f8bca6901a6a6d540ff61522b813988da47c4/env-visualization) for setup instructions.
+Check [here](https://github.com/WooooDyy/AgentGym/tree/640f8bca6901a6a6d540ff61522b813988da47c4/env-visualization) for AgentGym's default visualization instructions.
+Additionally, you can use our customized `dashboard/app.py` for monitoring training metrics and reviewing tasks like the **India-themed RedBus & ConfirmTkt tasks** natively.
 
 ## Acknowledgement
 
